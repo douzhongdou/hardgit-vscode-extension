@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowImportingTsExtensions": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "rootDir": ".",
+    "types": [
+      "node",
+      "vscode"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "test/**/*.ts"
+  ]
+}

@@ -1,0 +1,92 @@
+:root {
+  --vscode-font-family: "Segoe UI", "PingFang SC", sans-serif;
+  --vscode-editor-font-family: "Cascadia Mono", "Consolas", monospace;
+  --vscode-editor-background: #0d1420;
+  --vscode-editor-foreground: #e8edf4;
+  --vscode-editorWidget-background: rgba(21, 30, 42, 0.94);
+  --vscode-panel-border: rgba(104, 129, 158, 0.36);
+  --vscode-descriptionForeground: #9aa9bc;
+  --vscode-textLink-foreground: #78b7ff;
+}
+
+body {
+  font-family: var(--vscode-font-family);
+}
+
+.browser-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.browser-toolbar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(44vw, 560px);
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--vscode-panel-border) 78%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--vscode-editorWidget-background) 92%, rgba(11, 16, 22, 0.66));
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+}
+
+.browser-toolbar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid color-mix(in srgb, var(--vscode-panel-border) 74%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--vscode-textLink-foreground) 18%, transparent);
+  color: var(--vscode-editor-foreground);
+  cursor: pointer;
+}
+
+.browser-toolbar-button:hover {
+  background: color-mix(in srgb, var(--vscode-textLink-foreground) 24%, transparent);
+}
+
+.browser-toolbar-hint {
+  color: var(--vscode-descriptionForeground);
+  font-size: 11px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.browser-drop-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(4, 8, 14, 0.58);
+  backdrop-filter: blur(8px);
+}
+
+.browser-drop-card {
+  width: min(560px, 100%);
+}
+
+@media (max-width: 900px) {
+  .browser-toolbar {
+    left: 16px;
+    right: 16px;
+    justify-content: space-between;
+    max-width: none;
+  }
+
+  .browser-toolbar-hint {
+    display: none;
+  }
+}

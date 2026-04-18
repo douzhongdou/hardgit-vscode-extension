@@ -1,0 +1,78 @@
+{
+  "name": "hardgit-3d-preview",
+  "displayName": "Hardgit 3D Preview",
+  "icon": "hardgit-vscode-icon.png",
+  "version": "0.0.2-build-2026-04-17T09-58-08",
+  "publisher": "local",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/douzhongdou/hardgit-vscode.git"
+  },
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "main": "./dist/extension/extension.js",
+  "activationEvents": [
+    "onCustomEditor:hardgit.3dPreview"
+  ],
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "hardgit.3dPreview",
+        "displayName": "hardgit 3D Preview",
+        "icon": "hardgit-vscode-icon.png",
+        "selector": [
+          {
+            "filenamePattern": "*.glb"
+          },
+          {
+            "filenamePattern": "*.gltf"
+          },
+          {
+            "filenamePattern": "*.step"
+          },
+          {
+            "filenamePattern": "*.stp"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "hardgit.3dPreview.refresh",
+        "title": "hardgit 3D Preview: Refresh"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "pnpm build:extension && pnpm build:webview",
+    "build:extension": "node ./scripts/build-extension.mjs",
+    "build:webview": "node ./scripts/build-webview.mjs",
+    "check": "tsc -p tsconfig.base.json --noEmit",
+    "dev:web": "node ./scripts/dev-browser.mjs",
+    "test": "node ./scripts/run-tests.mjs",
+    "package": "pnpm build && pnpm exec vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.3.0",
+    "lucide-react": "^0.500.0",
+    "occt-import-js": "^0.0.23",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "three": "^0.180.0",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/three": "^0.180.0",
+    "@types/vscode": "^1.99.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0",
+    "vsce": "^2.15.0"
+  }
+}

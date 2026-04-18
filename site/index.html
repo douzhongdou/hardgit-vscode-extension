@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardgit 3D Preview</title>
+    <meta
+      id="page-description"
+      name="description"
+      content="在 VS Code 中直接预览 STEP、STP、GLB、GLTF 模型，面向机械、结构与 CAD 工程师的轻量 3D 预览插件。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="#top" aria-label="Hardgit 3D Preview">
+            <span class="brand-mark">H</span>
+            <span class="brand-text">Hardgit 3D Preview</span>
+          </a>
+          <div class="header-actions">
+            <div class="language-switch" aria-label="Language switch">
+              <button
+                class="language-button is-active"
+                data-lang-switch="zh-CN"
+                type="button"
+              >
+                中文
+              </button>
+              <button class="language-button" data-lang-switch="en" type="button">
+                EN
+              </button>
+            </div>
+            <a
+              class="header-link"
+              data-i18n="nav.repo"
+              href="https://github.com/douzhongdou/hardgit-vscode"
+              rel="noreferrer"
+              target="_blank"
+            >
+              GitHub 仓库
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow" data-i18n="hero.eyebrow">VS Code 3D Preview Extension</p>
+              <h1 data-i18n="hero.title">
+                在 VS Code 中直接预览 STEP、GLTF、GLB 模型
+              </h1>
+              <p class="hero-description" data-i18n="hero.description">
+                为机械、结构与 CAD 工程师准备的轻量只读预览器，减少切软件的成本，在仓库里直接查看模型结构。
+              </p>
+              <ul class="hero-highlights">
+                <li data-i18n="hero.highlight1">支持 glb / gltf / step / stp</li>
+                <li data-i18n="hero.highlight2">实体树、显示模式与背景切换</li>
+                <li data-i18n="hero.highlight3">面向工程仓库内的快速核对工作流</li>
+              </ul>
+              <div class="hero-actions">
+                <a
+                  class="button button-primary"
+                  data-i18n="hero.primaryCta"
+                  href="https://github.com/douzhongdou/hardgit-vscode/releases"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  前往 GitHub Releases
+                </a>
+                <a
+                  class="button button-secondary"
+                  data-i18n="hero.secondaryCta"
+                  href="https://github.com/douzhongdou/hardgit-vscode"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  查看项目仓库
+                </a>
+              </div>
+            </div>
+            <div class="hero-media">
+              <div class="screenshot-card">
+                <div class="screenshot-toolbar">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <img
+                  src="./assets/snapshot.png"
+                  alt="Hardgit 插件在 VS Code 中预览 3D 模型的界面截图"
+                  data-i18n-attr="alt:screenshot.alt"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-muted">
+          <div class="container">
+            <div class="section-heading">
+              <h2 data-i18n="features.title">面向工程查看的核心能力</h2>
+              <p data-i18n="features.description">
+                只保留最关键的预览能力，帮助你在代码、说明文档与模型文件之间保持同一个工作上下文。
+              </p>
+            </div>
+            <div class="feature-grid">
+              <article class="feature-card">
+                <h3 data-i18n="features.items.open.title">直接打开常见 3D 文件</h3>
+                <p data-i18n="features.items.open.body">
+                  在 VS Code 中直接查看 glb、gltf、step、stp，不需要额外跳出工程环境。
+                </p>
+              </article>
+              <article class="feature-card">
+                <h3 data-i18n="features.items.readonly.title">只读预览，不改源文件</h3>
+                <p data-i18n="features.items.readonly.body">
+                  预览逻辑保持只读，适合核对结构、审查资产和浏览仓库内容。
+                </p>
+              </article>
+              <article class="feature-card">
+                <h3 data-i18n="features.items.tree.title">实体树与可见性切换</h3>
+                <p data-i18n="features.items.tree.body">
+                  通过层级结构快速定位部件，并逐项开关节点可见性。
+                </p>
+              </article>
+              <article class="feature-card">
+                <h3 data-i18n="features.items.render.title">多种显示模式</h3>
+                <p data-i18n="features.items.render.body">
+                  支持 Solid、Wireframe、Edges 三种模式，方便切换观察重点。
+                </p>
+              </article>
+              <article class="feature-card">
+                <h3 data-i18n="features.items.background.title">背景与视图控制</h3>
+                <p data-i18n="features.items.background.body">
+                  支持明暗背景切换、Fit View 和刷新预览，适合快速复位观察。
+                </p>
+              </article>
+              <article class="feature-card">
+                <h3 data-i18n="features.items.workflow.title">贴合工程仓库工作流</h3>
+                <p data-i18n="features.items.workflow.body">
+                  在代码、脚本、文档与模型之间连续切换，减少上下文中断。
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-heading">
+              <h2 data-i18n="scenarios.title">适合这些使用场景</h2>
+              <p data-i18n="scenarios.description">
+                页面内容不追求泛化，而是围绕结构件、装配体和工程仓库中的实际查看需求来设计。
+              </p>
+            </div>
+            <div class="scenario-list">
+              <article class="scenario-card">
+                <span class="scenario-index">01</span>
+                <h3 data-i18n="scenarios.items.review.title">快速核对结构件与装配文件</h3>
+                <p data-i18n="scenarios.items.review.body">
+                  在仓库里打开模型就能确认形体、层级和主要结构，不用反复切到独立软件。
+                </p>
+              </article>
+              <article class="scenario-card">
+                <span class="scenario-index">02</span>
+                <h3 data-i18n="scenarios.items.audit.title">审核 STEP / STP 资产</h3>
+                <p data-i18n="scenarios.items.audit.body">
+                  当你需要快速浏览供应商或协作方给出的三维文件时，可以先在编辑器内完成一轮轻量检查。
+                </p>
+              </article>
+              <article class="scenario-card">
+                <span class="scenario-index">03</span>
+                <h3 data-i18n="scenarios.items.context.title">保持工程上下文连续</h3>
+                <p data-i18n="scenarios.items.context.body">
+                  阅读说明、改脚本、检查模型都留在同一工作界面里，减少思路被打断。
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-muted">
+          <div class="container format-grid">
+            <div class="format-panel">
+              <p class="eyebrow" data-i18n="formats.eyebrow">Supported Formats</p>
+              <h2 data-i18n="formats.title">支持格式与使用方式</h2>
+              <p data-i18n="formats.description">
+                下载 `.vsix` 后安装到 VS Code，直接打开对应文件即可进入自定义预览。
+              </p>
+              <div class="format-tags">
+                <span>GLB</span>
+                <span>GLTF</span>
+                <span>STEP</span>
+                <span>STP</span>
+              </div>
+            </div>
+            <div class="notes-panel">
+              <div class="note-block">
+                <h3 data-i18n="notes.install.title">安装</h3>
+                <p data-i18n="notes.install.body">
+                  从 GitHub Releases 下载最新 `.vsix`，在 VS Code 中安装后即可使用。
+                </p>
+              </div>
+              <div class="note-block">
+                <h3 data-i18n="notes.usage.title">使用</h3>
+                <p data-i18n="notes.usage.body">
+                  打开 glb、gltf、step 或 stp 文件，插件会以只读方式进入 3D 预览界面。
+                </p>
+              </div>
+              <div class="note-block">
+                <h3 data-i18n="notes.limits.title">已知限制</h3>
+                <p data-i18n="notes.limits.body">
+                  对依赖外部资源的 gltf 需要完整路径；部分超大 STEP 装配可能只能解析结构而无法生成可渲染几何。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="cta-panel">
+              <p class="eyebrow" data-i18n="cta.eyebrow">Ready to Try</p>
+              <h2 data-i18n="cta.title">在你的工程仓库里试一下 Hardgit 3D Preview</h2>
+              <p data-i18n="cta.description">
+                如果你希望在 VS Code 中直接查看 3D 模型，而不是频繁切换软件，这个插件就是为这种工作流准备的。
+              </p>
+              <div class="hero-actions">
+                <a
+                  class="button button-primary"
+                  data-i18n="cta.primary"
+                  href="https://github.com/douzhongdou/hardgit-vscode/releases"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  前往 GitHub Releases
+                </a>
+                <a
+                  class="button button-secondary"
+                  data-i18n="cta.secondary"
+                  href="https://github.com/douzhongdou/hardgit-vscode"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  查看项目仓库
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./i18n.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

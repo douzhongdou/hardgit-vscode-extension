@@ -1,0 +1,9 @@
+defoma/
+models
+dist/
+node_modules/
+*.vsix
+*.tsbuildinfo
+.omc/
+dev/
+.dev/

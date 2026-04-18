@@ -1,0 +1,14 @@
+.gitignore
+.vscode/**
+.vscode-test/**
+defoma/**
+docs/**
+.dev/**
+node_modules/**
+scripts/**
+src/**
+test/**
+tsconfig.base.json
+pnpm-workspace.yaml
+pnpm-lock.yaml
+*.tsbuildinfo
