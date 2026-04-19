@@ -1,6 +1,17 @@
 import type { Object3D } from "three";
 
-export type SupportedModelExtension = "glb" | "gltf" | "step" | "stp";
+export type SupportedModelExtension =
+  | "glb"
+  | "gltf"
+  | "fbx"
+  | "obj"
+  | "stl"
+  | "ply"
+  | "dae"
+  | "step"
+  | "stp"
+  | "iges"
+  | "igs";
 export type RenderMode = "solid" | "wireframe" | "edges";
 export type ViewerBackgroundMode = "dark" | "light";
 export type ModelAssetMap = Readonly<Record<string, string>>;
@@ -51,8 +62,15 @@ export type ErrorStateProps = {
 const SUPPORTED_MODEL_EXTENSIONS: ReadonlySet<SupportedModelExtension> = new Set([
   "glb",
   "gltf",
+  "fbx",
+  "obj",
+  "stl",
+  "ply",
+  "dae",
   "step",
-  "stp"
+  "stp",
+  "iges",
+  "igs"
 ]);
 
 const STEP_SUPPORT_ERROR_MESSAGE =

@@ -7,14 +7,21 @@ async function loadTypesModule() {
   return import(pathToFileURL(resolve(process.cwd(), "src/viewer-core/types.ts")).href);
 }
 
-test("toSupportedModelExtension only accepts task-4 model formats", async () => {
+test("toSupportedModelExtension accepts all hardgit preview model formats", async () => {
   const { toSupportedModelExtension } = await loadTypesModule();
 
   assert.equal(toSupportedModelExtension("glb"), "glb");
   assert.equal(toSupportedModelExtension("GLTF"), "gltf");
+  assert.equal(toSupportedModelExtension("fbx"), "fbx");
+  assert.equal(toSupportedModelExtension("obj"), "obj");
+  assert.equal(toSupportedModelExtension("stl"), "stl");
+  assert.equal(toSupportedModelExtension("ply"), "ply");
+  assert.equal(toSupportedModelExtension("dae"), "dae");
   assert.equal(toSupportedModelExtension("step"), "step");
   assert.equal(toSupportedModelExtension("stp"), "stp");
-  assert.equal(toSupportedModelExtension("obj"), null);
+  assert.equal(toSupportedModelExtension("IGES"), "iges");
+  assert.equal(toSupportedModelExtension("igs"), "igs");
+  assert.equal(toSupportedModelExtension("3dm"), null);
 });
 
 test("createVersionedModelUrl appends the document version as a query parameter for refresh busting", async () => {
