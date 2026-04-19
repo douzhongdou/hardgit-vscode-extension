@@ -8,6 +8,13 @@ async function readPackageJson() {
   return JSON.parse(source) as {
     icon?: string;
     version?: string;
+    contributes?: {
+      customEditors?: Array<{
+        selector?: Array<{
+          filenamePattern?: string;
+        }>;
+      }>;
+    };
     repository?: {
       type?: string;
       url?: string;
@@ -41,6 +48,28 @@ test("package scripts expose the browser preview dev entry", async () => {
   const packageJson = await readPackageJson();
 
   assert.equal(packageJson.scripts?.["dev:web"], "node ./scripts/dev-browser.mjs");
+});
+
+test("custom editor selectors expose every supported model extension", async () => {
+  const packageJson = await readPackageJson();
+  const selectors =
+    packageJson.contributes?.customEditors?.flatMap(
+      (editor) => editor.selector?.map((item) => item.filenamePattern) ?? []
+    ) ?? [];
+
+  assert.deepEqual(selectors, [
+    "*.glb",
+    "*.gltf",
+    "*.fbx",
+    "*.obj",
+    "*.stl",
+    "*.ply",
+    "*.dae",
+    "*.step",
+    "*.stp",
+    "*.iges",
+    "*.igs"
+  ]);
 });
 
 test(".vscodeignore excludes the browser preview dev output from vsix packaging", async () => {

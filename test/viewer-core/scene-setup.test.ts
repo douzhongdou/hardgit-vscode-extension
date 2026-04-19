@@ -14,4 +14,6 @@ test("scene setup uses stronger contrast lighting for solid shading", async () =
   assert.match(source, /ambientLight intensity=\{backgroundMode === "light" \? 0\.24 : 0\.16\}/);
   assert.match(source, /directionalLight[\s\S]*intensity=\{backgroundMode === "light" \? 3\.4 : 3\.9\}/);
   assert.match(source, /directionalLight[\s\S]*intensity=\{backgroundMode === "light" \? 0\.34 : 0\.42\}[\s\S]*position=\{\[-8, 3\.5, -7\]\}/);
+  assert.doesNotMatch(source, /<gridHelper/);
+  assert.match(source, /<planeGeometry args=\{\[shadowScale, shadowScale\]\} \/>/);
 });

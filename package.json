@@ -30,10 +30,31 @@
             "filenamePattern": "*.gltf"
           },
           {
+            "filenamePattern": "*.fbx"
+          },
+          {
+            "filenamePattern": "*.obj"
+          },
+          {
+            "filenamePattern": "*.stl"
+          },
+          {
+            "filenamePattern": "*.ply"
+          },
+          {
+            "filenamePattern": "*.dae"
+          },
+          {
             "filenamePattern": "*.step"
           },
           {
             "filenamePattern": "*.stp"
+          },
+          {
+            "filenamePattern": "*.iges"
+          },
+          {
+            "filenamePattern": "*.igs"
           }
         ],
         "priority": "default"

@@ -22,10 +22,6 @@ export function SceneSetup({
     backgroundMode === "light"
       ? (["#ffffff", "#c7d2de", 0.62] as const)
       : (["#dcecff", "#101926", 0.28] as const);
-  const gridColors =
-    backgroundMode === "light"
-      ? (["#c4d0dc", "#dfe6ee"] as const)
-      : (["#334860", "#1b2837"] as const);
   const gridPositionY =
     sceneBounds === null ? -0.001 : -(sceneBounds.size[1] * 0.5 + 0.03);
   const shadowScale =
@@ -63,10 +59,6 @@ export function SceneSetup({
       <directionalLight
         intensity={backgroundMode === "light" ? 0.9 : 1.15}
         position={[4, 7, -11]}
-      />
-      <gridHelper
-        args={[24, 24, gridColors[0], gridColors[1]]}
-        position={[0, gridPositionY, 0]}
       />
       {sceneBounds !== null ? (
         <mesh

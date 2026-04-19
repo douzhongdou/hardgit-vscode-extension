@@ -29,6 +29,7 @@ declare module "occt-import-js" {
 
   export type OcctImportModule = {
     ReadStepFile(fileBuffer: Uint8Array, params: null): OcctReadResult;
+    ReadIgesFile(fileBuffer: Uint8Array, params: null): OcctReadResult;
   };
 
   export type OcctImportFactoryOptions = {

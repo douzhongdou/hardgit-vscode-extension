@@ -187,7 +187,7 @@ export function ThreePreviewEditor({
     overlay = (
       <ErrorState
         title="Unsupported model format"
-        message={`hardgit supports glb, gltf, step, and stp files. Received: ${documentState.extension}.`}
+        message={`hardgit supports glb, gltf, fbx, obj, stl, ply, dae, step, stp, iges, and igs files. Received: ${documentState.extension}.`}
       />
     );
   } else if (error !== null) {
