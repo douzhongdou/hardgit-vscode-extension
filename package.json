@@ -2,7 +2,7 @@
   "name": "hardgit-3d-preview",
   "displayName": "Hardgit 3D Preview",
   "icon": "hardgit-vscode-icon.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "dzd",
   "license": "MIT",
   "repository": {
