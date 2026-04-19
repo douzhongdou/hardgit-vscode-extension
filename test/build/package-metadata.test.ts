@@ -7,6 +7,7 @@ async function readPackageJson() {
   const source = await readFile(resolve(process.cwd(), "package.json"), "utf8");
   return JSON.parse(source) as {
     icon?: string;
+    version?: string;
     repository?: {
       type?: string;
       url?: string;
@@ -24,9 +25,10 @@ test("package metadata includes repository and license information", async () =>
   const packageJson = await readPackageJson();
 
   assert.equal(packageJson.icon, "hardgit-vscode-icon.png");
+  assert.match(packageJson.version ?? "", /^\d+\.\d+\.\d+$/);
   assert.deepEqual(packageJson.repository, {
     type: "git",
-    url: "https://github.com/douzhongdou/hardgit-vscode.git"
+    url: "https://github.com/douzhongdou/hardgit-vscode-extension.git"
   });
   assert.equal(packageJson.license, "MIT");
 });

@@ -4,9 +4,21 @@ import { join } from "node:path";
 const pkgPath = join(process.cwd(), "package.json");
 const pkg = JSON.parse(readFileSync(pkgPath, "utf-8"));
 
-// Append build timestamp to version for easy identification
-const buildTime = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
-pkg.version = `${pkg.version}-build-${buildTime}`;
+const parts = String(pkg.version)
+  .split(".")
+  .map((part) => Number.parseInt(part, 10));
+
+if (
+  parts.length !== 3 ||
+  parts.some((part) => Number.isNaN(part) || part < 0)
+) {
+  throw new Error(
+    `Unsupported version format "${pkg.version}". Expected semver like 0.0.2.`
+  );
+}
+
+parts[2] += 1;
+pkg.version = parts.join(".");
 
 writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n");
 console.log(`Version updated to: ${pkg.version}`);

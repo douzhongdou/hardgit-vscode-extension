@@ -14,7 +14,7 @@ await esbuild.build({
   platform: "node",
   target: ["node18"],
   external: ["vscode"],
-  sourcemap: true,
+  sourcemap: false,
   logLevel: "info"
 });
 

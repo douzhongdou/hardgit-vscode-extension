@@ -2,12 +2,12 @@
   "name": "hardgit-3d-preview",
   "displayName": "Hardgit 3D Preview",
   "icon": "hardgit-vscode-icon.png",
-  "version": "0.0.2-build-2026-04-17T09-58-08",
-  "publisher": "local",
+  "version": "0.0.2",
+  "publisher": "dzd",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/douzhongdou/hardgit-vscode.git"
+    "url": "https://github.com/douzhongdou/hardgit-vscode-extension.git"
   },
   "engines": {
     "vscode": "^1.99.0"

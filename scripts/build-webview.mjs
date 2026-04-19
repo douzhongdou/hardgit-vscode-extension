@@ -15,7 +15,7 @@ await esbuild.build({
   target: ["es2022"],
   jsx: "automatic",
   jsxImportSource: "react",
-  sourcemap: true,
+  sourcemap: false,
   alias: {
     path: pathShim
   },
