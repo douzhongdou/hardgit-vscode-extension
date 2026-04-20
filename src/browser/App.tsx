@@ -1,6 +1,10 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { ThreePreviewEditor } from "../viewer-core/ThreePreviewEditor";
-import type { ModelAssetMap } from "../viewer-core/types";
+import {
+  getSupportedModelExtensionsLabel,
+  getSupportedModelFileInputAcceptValue,
+  type ModelAssetMap
+} from "../viewer-core/types";
 import {
   createBrowserFileSession,
   revokeBrowserFileSession,
@@ -15,7 +19,7 @@ type PickerState = {
 };
 
 const EMPTY_BROWSER_LABEL =
-  "Choose or drop a glb, gltf, step, or stp file to start previewing.";
+  `Choose or drop a ${getSupportedModelExtensionsLabel()} file to start previewing.`;
 
 function supportsFiles(dataTransfer: DataTransfer | null): boolean {
   return Array.from(dataTransfer?.types ?? []).includes("Files");
@@ -51,7 +55,7 @@ export function App() {
         assetMap: null,
         currentFiles: files,
         errorMessage:
-          "No supported model file was found. Choose or drop a glb, gltf, step, or stp file."
+          `No supported model file was found. Choose or drop a ${getSupportedModelExtensionsLabel()} file.`
       });
       return;
     }
@@ -146,7 +150,7 @@ export function App() {
   return (
     <>
       <input
-        accept=".glb,.gltf,.step,.stp"
+        accept={getSupportedModelFileInputAcceptValue()}
         className="browser-file-input"
         id={inputId}
         multiple

@@ -24,6 +24,22 @@ test("toSupportedModelExtension accepts all hardgit preview model formats", asyn
   assert.equal(toSupportedModelExtension("3dm"), null);
 });
 
+test("supported model extension copy stays in sync with the loader contract", async () => {
+  const {
+    getSupportedModelExtensionsLabel,
+    getSupportedModelFileInputAcceptValue
+  } = await loadTypesModule();
+
+  assert.equal(
+    getSupportedModelExtensionsLabel(),
+    "glb, gltf, fbx, obj, stl, ply, dae, step, stp, iges, and igs"
+  );
+  assert.equal(
+    getSupportedModelFileInputAcceptValue(),
+    ".glb,.gltf,.fbx,.obj,.stl,.ply,.dae,.step,.stp,.iges,.igs"
+  );
+});
+
 test("createVersionedModelUrl appends the document version as a query parameter for refresh busting", async () => {
   const { createVersionedModelUrl } = await loadTypesModule();
 

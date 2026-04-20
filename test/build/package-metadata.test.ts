@@ -77,3 +77,10 @@ test(".vscodeignore excludes the browser preview dev output from vsix packaging"
 
   assert.match(vscodeIgnore, /^\.dev\/\*\*$/m);
 });
+
+test(".vscodeignore excludes local model fixtures and omx state from vsix packaging", async () => {
+  const vscodeIgnore = await readVscodeIgnore();
+
+  assert.match(vscodeIgnore, /^models\/\*\*$/m);
+  assert.match(vscodeIgnore, /^\.omc\/\*\*$/m);
+});
