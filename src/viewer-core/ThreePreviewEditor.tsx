@@ -24,6 +24,7 @@ import { useEntityStore } from "./stores/entityStore";
 import { useViewerStore } from "./stores/viewerStore";
 import {
   createVersionedModelUrl,
+  getSupportedModelExtensionsLabel,
   toSupportedModelExtension,
   type ModelAssetMap,
   type ModelLoadResult
@@ -187,7 +188,7 @@ export function ThreePreviewEditor({
     overlay = (
       <ErrorState
         title="Unsupported model format"
-        message={`hardgit supports glb, gltf, fbx, obj, stl, ply, dae, step, stp, iges, and igs files. Received: ${documentState.extension}.`}
+        message={`hardgit supports ${getSupportedModelExtensionsLabel()} files. Received: ${documentState.extension}.`}
       />
     );
   } else if (error !== null) {

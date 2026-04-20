@@ -12,6 +12,8 @@ site/**
 scripts/**
 src/**
 test/**
+models/**
+.omc/**
 debug.log
 dist/browser/**
 dist/**/*.map
